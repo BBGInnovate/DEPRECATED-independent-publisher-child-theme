@@ -26,6 +26,11 @@ and Blueprint http://www.blueprintcss.org/
 /* =Theme customization starts here. Add your own custom styles.
 -------------------------------------------------------------- */
 
+/* Custom Africa Rizing styles */
+h1.entry-title a, h1.site-title a{color: #333334;}
+
+
+
 /* Uncomment this style definition to hide the green bar on Quote Formatted posts: */
 
 /*

@@ -29,6 +29,11 @@ and Blueprint http://www.blueprintcss.org/
 /* Custom Africa Rizing styles */
 h1.entry-title a, h1.site-title a{color: #333334;}
 
+/* Remove theme CSS styling that is causing skin tones to be unintentionally darker */
+/* alternately, avoid setting post titles on top of the images */
+.single.post-cover-overlay-post-title .post-cover-title-wrapper, .page.post-cover-overlay-post-title .post-cover-title-wrapper{background: transparent;}
+.single.post-cover-overlay-post-title .post-cover-title-image, .page.post-cover-overlay-post-title .post-cover-title-image {opacity: 1; }
+.single.post-cover-overlay-post-title .post-cover-title-head .entry-subtitle, .single.post-cover-overlay-post-title .post-cover-title-head .entry-title, .page.post-cover-overlay-post-title .post-cover-title-head .entry-subtitle, .page.post-cover-overlay-post-title .post-cover-title-head .entry-title {text-shadow: 2px 2px 4px #000;}
 
 
 /* Uncomment this style definition to hide the green bar on Quote Formatted posts: */

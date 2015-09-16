@@ -1,5 +1,11 @@
 <?php
 
+function __custom_independent_publisher_full_width_featured_image_size() {
+    return "full";
+}
+
+add_filter( 'independent_publisher_full_width_featured_image_size', '__custom_independent_publisher_full_width_featured_image_size' );
+
 /*
  * You can add your own functions here. You can also override functions that are
  * called from within the parent theme. For a complete list of function you can

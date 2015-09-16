@@ -42,9 +42,8 @@ function independent_publisher_stylesheet() {
  * Modifies the default theme footer.
  * This also applies the changes to JetPack's Infinite Scroll footer, if you're using that module.
  */
-/*
 function independent_publisher_footer_credits() {
-	$my_custom_footer = 'This is my custom footer.';
+	$my_custom_footer = 'Project Rize is a new digital media startup developed by <a href="http://bbg.gov/" target="_blank">US International Media</a> in partnership with <a href="http://voanews.com/" target="_blank">VOA News</a> to promote open discourse, democratic ideals and sustainable, civil societies throughout the world.';
 	return $my_custom_footer;
 }
-*/
+

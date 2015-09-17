@@ -15,6 +15,20 @@ add_filter( 'independent_publisher_full_width_featured_image_size', '__custom_in
  *
  */
 
+function independent_publisher_site_info() {
+	?>
+	<?php if ( get_header_image() ) : ?>
+		<a class="site-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+			<img class="no-grav" src="<?php echo esc_url( get_header_image() ); ?>" height="<?php echo absint( get_custom_header()->height ); ?>" width="<?php echo absint( get_custom_header()->width ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
+		</a>
+	<?php endif; ?>
+	<h1 class="site-title">
+		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">Africa <span class="orangeHighlight">Rizing</span></a>
+	</h1>
+	<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+	<?php get_template_part( 'menu', 'social' ); ?>
+<?php
+}
 
 /*
  * Uncomment the following to add a favicon to your site. You need to add favicon

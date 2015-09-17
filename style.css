@@ -27,14 +27,31 @@ and Blueprint http://www.blueprintcss.org/
 -------------------------------------------------------------- */
 
 /* Custom Africa Rizing styles */
-h1.entry-title a, h1.site-title a{color: #333334;}
+h1.entry-title a, h1.site-title a{color: #333;}
 
-/* Remove theme CSS styling that is causing skin tones to be unintentionally darker */
+/* Remove theme CSS styling that is causing skin tones to be unintentionally darker on featured images */
 /* alternately, avoid setting post titles on top of the images */
 .single.post-cover-overlay-post-title .post-cover-title-wrapper, .page.post-cover-overlay-post-title .post-cover-title-wrapper{background: transparent;}
 .single.post-cover-overlay-post-title .post-cover-title-image, .page.post-cover-overlay-post-title .post-cover-title-image {opacity: 1; }
 .single.post-cover-overlay-post-title .post-cover-title-head .entry-subtitle, .single.post-cover-overlay-post-title .post-cover-title-head .entry-title, .page.post-cover-overlay-post-title .post-cover-title-head .entry-subtitle, .page.post-cover-overlay-post-title .post-cover-title-head .entry-title {text-shadow: 2px 2px 4px #000;}
 
+
+/* Cutline and photo styles */
+.wp-caption-text {
+	text-align: left;
+	font-size: 80%;
+	font-family: sans-serif;
+	font-weight: bold;
+}
+.wp-caption {
+	border: none;
+}
+.wp-caption img{
+	margin:0;
+}
+
+/*.post .entry-title a{color: orange;}*/
+.post .entry-content a:first-of-type p{color: #333;}
 
 /* Uncomment this style definition to hide the green bar on Quote Formatted posts: */
 

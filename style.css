@@ -27,6 +27,9 @@ and Blueprint http://www.blueprintcss.org/
 -------------------------------------------------------------- */
 
 /* Custom Africa Rizing styles */
+h1.entry-title a, h1.site-title a{color: #333;}
+h1.site-title a{text-transform: uppercase;}
+h1.site-title a .orangeHighlight {color: orange;}
 
 
 @media only screen and (max-width: 500px){
@@ -34,6 +37,11 @@ and Blueprint http://www.blueprintcss.org/
 		float:left;
 		margin-right: 20px;
 	}
+	#masthead .site-title, .single-column-layout #masthead .site-title{
+		padding-top:20px;
+		font-size: 30px;
+	}
+	.site-description{display: none;}
 
 	/* styling sidebar nav links as full-width links */
 	aside .main-navigation ul, .widget-area ul, .widget-area ol{
@@ -48,11 +56,71 @@ and Blueprint http://www.blueprintcss.org/
 	aside ul li a{
 		padding: 5px 20px;
 		margin:0;
+		width:90%;
 	}
 	aside ul li:last-of-type{
 		border-bottom: 1px solid #CCC;
 	}
 }
+
+
+
+
+
+/* experimenting with styles for images sizes */
+.entry-content img.size-medium{width: 100% !important;}
+.entry-content img.size-mugshot{width: 50% !important; max-width: 200px; float: left; margin-right: 20px;}
+
+@media only screen and (min-width: 700px) {
+	.entry-content img.size-medium{width: 50% !important; float: right; margin: 5px 20px;}
+}
+
+
+
+/* Remove theme CSS styling that is causing skin tones to be unintentionally darker on featured images */
+/* alternately, avoid setting post titles on top of the images */
+.single.post-cover-overlay-post-title .post-cover-title-wrapper, .page.post-cover-overlay-post-title .post-cover-title-wrapper{background: transparent;}
+.single.post-cover-overlay-post-title .post-cover-title-image, .page.post-cover-overlay-post-title .post-cover-title-image {opacity: 1; }
+.single.post-cover-overlay-post-title .post-cover-title-head .entry-subtitle, .single.post-cover-overlay-post-title .post-cover-title-head .entry-title, .page.post-cover-overlay-post-title .post-cover-title-head .entry-subtitle, .page.post-cover-overlay-post-title .post-cover-title-head .entry-title {text-shadow: 2px 2px 4px #000;}
+
+.postCoverResponsive { height:150px !important; }
+@media (min-width: 200px) {
+/* .postCoverResponsive { height:150px !important; } */
+}
+@media (min-width: 300px) {
+.postCoverResponsive { height:150px !important; }
+}
+@media (min-width: 700px) {
+.postCoverResponsive { height:400px !important; }
+}
+@media (min-width: 1024px) {
+.postCoverResponsive { height:500px !important; }
+}
+@media (min-width: 2048px) {
+.postCoverResponsive { height:1000px !important; }
+}
+
+
+
+
+/* Cutline and photo styles */
+.wp-caption-text {
+	text-align: left;
+	font-size: 80%;
+	font-family: sans-serif;
+	font-weight: bold;
+}
+.wp-caption {
+	border: none;
+}
+.wp-caption img{
+	margin:0;
+}
+
+/*.post .entry-title a{color: orange;}*/
+.post .entry-content a:first-of-type p{color: #333;}
+
+
 
 
 
@@ -80,49 +148,6 @@ and Blueprint http://www.blueprintcss.org/
 	#staff h3{margin-bottom:30px;}
 }
 
-
-
-/* experimenting with styles for images sizes */
-.entry-content img.size-medium{width: 100% !important;}
-.entry-content img.size-mugshot{width: 50% !important;float: left; margin-right: 20px;}
-
-@media only screen and (min-width: 600px) {
-	.entry-content img.size-mugshot{width: 200px !important; }
-}
-@media only screen and (min-width: 700px) {
-	.entry-content img.size-medium{width: 50% !important; float: left; margin-right: 20px;}
-}
-
-
-
-h1.entry-title a, h1.site-title a{color: #333;}
-h1.site-title a{text-transform: uppercase;}
-h1.site-title a .orangeHighlight {color: orange;}
-
-
-/* Remove theme CSS styling that is causing skin tones to be unintentionally darker on featured images */
-/* alternately, avoid setting post titles on top of the images */
-.single.post-cover-overlay-post-title .post-cover-title-wrapper, .page.post-cover-overlay-post-title .post-cover-title-wrapper{background: transparent;}
-.single.post-cover-overlay-post-title .post-cover-title-image, .page.post-cover-overlay-post-title .post-cover-title-image {opacity: 1; }
-.single.post-cover-overlay-post-title .post-cover-title-head .entry-subtitle, .single.post-cover-overlay-post-title .post-cover-title-head .entry-title, .page.post-cover-overlay-post-title .post-cover-title-head .entry-subtitle, .page.post-cover-overlay-post-title .post-cover-title-head .entry-title {text-shadow: 2px 2px 4px #000;}
-
-
-/* Cutline and photo styles */
-.wp-caption-text {
-	text-align: left;
-	font-size: 80%;
-	font-family: sans-serif;
-	font-weight: bold;
-}
-.wp-caption {
-	border: none;
-}
-.wp-caption img{
-	margin:0;
-}
-
-/*.post .entry-title a{color: orange;}*/
-.post .entry-content a:first-of-type p{color: #333;}
 
 /* Uncomment this style definition to hide the green bar on Quote Formatted posts: */
 

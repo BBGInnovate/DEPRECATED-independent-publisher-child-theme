@@ -66,7 +66,7 @@ add_filter( 'image_size_names_choose', 'my_custom_sizes' );
 
 function my_custom_sizes( $sizes ) {
     return array_merge( $sizes, array(
-        'mugshot' =>'Mugshot',
+        'mugshot' =>'Mugshot'
     ) );
 }
 
@@ -83,7 +83,7 @@ function my_custom_sizes( $sizes ) {
 						//tevkori_get_srcset_array( $id, $size = 'thumbnail' ) {
 						//global $wpdb;
 						
-						$tempSources = tevkori_get_srcset_array( get_post_thumbnail_id());
+						$tempSources = tevkori_get_srcset_array( get_post_thumbnail_id(), 'full');
 						//sources aren't automatically in numeric order.  ksort does the trick.
 						ksort($tempSources);
 

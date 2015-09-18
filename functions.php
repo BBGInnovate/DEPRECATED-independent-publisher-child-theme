@@ -70,3 +70,94 @@ function my_custom_sizes( $sizes ) {
     ) );
 }
 
+/**
+	 * Show Full Width Featured Image on single pages if post has full width featured image selected
+	 * or if Auto-Set Featured Image as Post Cover option is enabled
+	 */
+	function independent_publisher_full_width_featured_image() {
+		if ( independent_publisher_has_full_width_featured_image() ) {
+			while ( have_posts() ) : the_post();
+				if ( has_post_thumbnail() ) :
+					if ( independent_publisher_post_has_post_cover_title() ):
+						
+						//tevkori_get_srcset_array( $id, $size = 'thumbnail' ) {
+						//global $wpdb;
+						
+						$tempSources = tevkori_get_srcset_array( get_post_thumbnail_id());
+						//sources aren't automatically in numeric order.  ksort does the trick.
+						ksort($tempSources);
+
+						echo "<style>\n";
+						$counter=0;
+						$prevWidth=0;
+						foreach( $tempSources as $key => $tempSource ) {
+							//we're workign with an array of sourceset entries ... gotta get rid of the width part
+							$counter++;
+							
+							$tempSource = preg_replace( '/(.*)\s(.*)/', '$1', $tempSource );	
+							if ($counter == 1) {
+								echo "\t.postCoverResponsive { background-image: url($tempSource) !important; }\n";
+							} elseif ($counter < count($tempSources)) {
+								echo "\t@media (min-width: " . ($prevWidth+1) . "px) and (max-width: " . $key . "px) {\n";
+								echo "\t\t.postCoverResponsive { background-image: url($tempSource) !important; }\n";
+								echo "\t}\n";
+							} else {
+								echo "\t@media (min-width: " . ($prevWidth+1) . "px) {\n";
+								echo "\t\t.postCoverResponsive { background-image: url($tempSource) !important; }\n";
+								echo "\t}\n";
+							}
+							$prevWidth=$key;
+						}
+						echo "</style>\n";
+
+						$featured_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), apply_filters( 'independent_publisher_full_width_featured_image_size', 'independent_publisher_post_thumbnail' ));
+						$featured_image_url = $featured_image_url[0];
+					?>
+						<div class="post-cover-title-wrapper">
+							<div class="post-cover-title-image postCoverResponsive" ></div>
+								<div class="post-cover-title-head">
+									<header class="post-cover-title">
+										<h1 class="entry-title" itemprop="name">
+											<?php echo get_the_title(); ?>
+										</h1>
+										<?php $subtitle = get_post_meta(get_the_id(), 'independent_publisher_post_cover_subtitle', true); ?>
+										<?php if ( $subtitle ): ?>
+											<h2 class="entry-subtitle">
+												<?php echo $subtitle;?>
+											</h2>
+										<?php endif; ?>
+										<?php if ( ! is_page() ) : ?>
+											<h3 class="entry-title-meta">
+												<span class="entry-title-meta-author">
+													<a class="author-avatar" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>">
+														<?php echo get_avatar( get_the_author_meta( 'ID' ), 32 ); ?>
+													</a>
+													<?php
+														if ( ! independent_publisher_categorized_blog() ) {
+															echo independent_publisher_entry_meta_author_prefix() . ' ';
+														}
+														independent_publisher_posted_author();
+													?>
+												</span>
+												<?php if ( independent_publisher_categorized_blog() ) {
+													echo independent_publisher_entry_meta_category_prefix() . ' ' . independent_publisher_post_categories( '', true );
+												} ?>
+												<span class="entry-title-meta-post-date">
+													<span class="sep"> <?php echo apply_filters( 'independent_publisher_entry_meta_separator', '|' ); ?> </span>
+													<?php independent_publisher_posted_on_date() ?>
+												</span>
+												<?php do_action( 'independent_publisher_entry_title_meta', $separator = ' | ' ); ?>
+											</h3>
+										<?php endif; ?>
+									</header>
+								</div>
+							</div>
+					<?php
+					else:
+						the_post_thumbnail( apply_filters( 'independent_publisher_full_width_featured_image_size', 'independent_publisher_post_thumbnail' ), array( 'class' => 'full-width-featured-image' ) );
+					endif;
+				endif;
+			endwhile; // end of the loop.
+		}
+	}
+

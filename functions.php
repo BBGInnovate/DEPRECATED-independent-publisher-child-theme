@@ -61,3 +61,12 @@ function independent_publisher_footer_credits() {
 	return $my_custom_footer;
 }
 
+add_image_size( 'mugshot', 200, 200 ); // 220 pixels wide by 180 pixels tall, soft proportional crop mode
+add_filter( 'image_size_names_choose', 'my_custom_sizes' );
+
+function my_custom_sizes( $sizes ) {
+    return array_merge( $sizes, array(
+        'mugshot' =>'Mugshot',
+    ) );
+}
+

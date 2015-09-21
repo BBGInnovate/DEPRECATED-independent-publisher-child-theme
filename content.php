@@ -58,7 +58,8 @@
 				$img_id = get_post_thumbnail_id($post->ID); // This gets just the ID of the img
 				$alt_text = get_post_meta($img_id , '_wp_attachment_image_alt', true);
 
-				echo "<img src='$url' alt='$alt_text' class='listThumbnail'/>"; 
+				/*echo "<img src='$url' alt='$alt_text' class='listThumbnail'/>"; */
+				echo "<div class='listThumbnail' style='background-image: url(".$url.");'></div>"; 
 			}
 		?>
 

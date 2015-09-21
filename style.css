@@ -101,7 +101,7 @@ h1.site-title a .orangeHighlight {color: orange;}
 .postCoverResponsive { height:1000px !important; }
 }
 
-.listThumbnail{float:left; margin-right: 10px;}
+.listThumbnail{float:left; margin: 5px 15px 15px 0; width: 50%; max-width: 150px; height: 100px; background-size: cover; background: no-repeat center center / cover;  }
 
 /*Move post title and info below post on mobile and reset colors */
 @media (max-width: 699px) {
@@ -129,6 +129,7 @@ h1.site-title a .orangeHighlight {color: orange;}
 	.single.post-cover-overlay-post-title .post-cover-title-head .post-cover-title, .page.post-cover-overlay-post-title .post-cover-title-head .post-cover-title{
 		padding:20px;
 	}
+	footer.entry-meta {display:none;}
 }
 
 /* Cutline and photo styles */

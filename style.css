@@ -34,6 +34,7 @@ h1.site-title a .orangeHighlight {color: orange;}
 .site-master-logo img {opacity: 1;}
 
 @media only screen and (max-width: 500px){
+	#page {margin-top:25px;}
 	#masthead .site-logo{
 		float:left;
 		margin-right: 10px;
@@ -42,7 +43,9 @@ h1.site-title a .orangeHighlight {color: orange;}
 		padding-top:20px;
 		font-size: 30px;
 	}
-	.site-description{display: none;}
+	.site-description, #masthead .site-navigation{display: none;}
+
+	.blog article {padding: 10px 0;}
 
 	/* styling sidebar nav links as full-width links */
 	aside .main-navigation ul, .widget-area ul, .widget-area ol{
@@ -77,9 +80,9 @@ h1.site-title a .orangeHighlight {color: orange;}
 }
 
 
+.blog .first-post img{margin: 0 0 0 0;}
 
 /* Remove theme CSS styling that is causing skin tones to be unintentionally darker on featured images */
-/* alternately, avoid setting post titles on top of the images */
 .single.post-cover-overlay-post-title .post-cover-title-wrapper, .page.post-cover-overlay-post-title .post-cover-title-wrapper{background: transparent;}
 .single.post-cover-overlay-post-title .post-cover-title-image, .page.post-cover-overlay-post-title .post-cover-title-image {opacity: 1; }
 .single.post-cover-overlay-post-title .post-cover-title-head .entry-subtitle, .single.post-cover-overlay-post-title .post-cover-title-head .entry-title, .page.post-cover-overlay-post-title .post-cover-title-head .entry-subtitle, .page.post-cover-overlay-post-title .post-cover-title-head .entry-title {text-shadow: 2px 2px 4px #000;}
@@ -103,7 +106,7 @@ h1.site-title a .orangeHighlight {color: orange;}
 
 .listThumbnail{float:left; margin: 5px 15px 15px 0; width: 50%; max-width: 150px; height: 100px; background-size: cover; background: no-repeat center center / cover;  }
 
-/*Move post title and info below post on mobile and reset colors */
+/*Move post title and info below featured image on mobile and reset colors */
 @media (max-width: 699px) {
 	.single.post-cover-overlay-post-title .post-cover-title-head, .page.post-cover-overlay-post-title .post-cover-title-head{
 		position: relative;
@@ -122,8 +125,8 @@ h1.site-title a .orangeHighlight {color: orange;}
 	.single.post-cover-overlay-post-title .post-cover-title-head .entry-title-meta a, .page.post-cover-overlay-post-title .post-cover-title-head .entry-title-meta a{
 		color: orange;
 	}
-
 }
+
 
 @media (max-width: 500px){
 	.single.post-cover-overlay-post-title .post-cover-title-head .post-cover-title, .page.post-cover-overlay-post-title .post-cover-title-head .post-cover-title{

@@ -120,8 +120,14 @@ h1.site-title a .orangeHighlight {color: orange;}
 	.single.post-cover-overlay-post-title .post-cover-title-head .entry-title-meta a, .page.post-cover-overlay-post-title .post-cover-title-head .entry-title-meta a{
 		color: orange;
 	}
+
 }
 
+@media (max-width: 500px){
+	.single.post-cover-overlay-post-title .post-cover-title-head .post-cover-title, .page.post-cover-overlay-post-title .post-cover-title-head .post-cover-title{
+		padding:20px;
+	}
+}
 
 /* Cutline and photo styles */
 .wp-caption-text {

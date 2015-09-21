@@ -101,6 +101,7 @@ h1.site-title a .orangeHighlight {color: orange;}
 .postCoverResponsive { height:1000px !important; }
 }
 
+.listThumbnail{float:left; margin-right: 10px;}
 
 /*Move post title and info below post on mobile and reset colors */
 @media (max-width: 699px) {

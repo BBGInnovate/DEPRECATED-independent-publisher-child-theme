@@ -88,7 +88,7 @@ h1.site-title a .orangeHighlight {color: orange;}
 /* .postCoverResponsive { height:150px !important; } */
 }
 @media (min-width: 300px) {
-.postCoverResponsive { height:150px !important; }
+.postCoverResponsive { height:250px !important; }
 }
 @media (min-width: 700px) {
 .postCoverResponsive { height:400px !important; }
@@ -101,6 +101,26 @@ h1.site-title a .orangeHighlight {color: orange;}
 }
 
 
+/*Move post title and info below post on mobile and reset colors */
+@media (max-width: 699px) {
+	.single.post-cover-overlay-post-title .post-cover-title-head, .page.post-cover-overlay-post-title .post-cover-title-head{
+		position: relative;
+		background-image:none;
+	}
+	.single.post-cover-overlay-post-title .post-cover-title-head .entry-subtitle, .single.post-cover-overlay-post-title .post-cover-title-head .entry-title, .page.post-cover-overlay-post-title .post-cover-title-head .entry-subtitle, .page.post-cover-overlay-post-title .post-cover-title-head .entry-title{
+		text-shadow: none;
+		color: #333;
+	}
+
+	/* reset byline and date colors*/
+	/*.single.post-cover-overlay-post-title .post-cover-title-head .entry-title-meta, .single.post-cover-overlay-post-title .post-cover-title-head .entry-title-meta a, .page.post-cover-overlay-post-title .post-cover-title-head .entry-title-meta, .page.post-cover-overlay-post-title .post-cover-title-head .entry-title-meta a{*/
+	.single.post-cover-overlay-post-title .post-cover-title-head .entry-title-meta, .page.post-cover-overlay-post-title .post-cover-title-head .entry-title-meta /*, .single.post-cover-overlay-post-title .post-cover-title-head .entry-title-meta .entry-title-meta-post-date a*/{
+		color: #b3b3b1;
+	}
+	.single.post-cover-overlay-post-title .post-cover-title-head .entry-title-meta a, .page.post-cover-overlay-post-title .post-cover-title-head .entry-title-meta a{
+		color: orange;
+	}
+}
 
 
 /* Cutline and photo styles */
